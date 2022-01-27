@@ -108,10 +108,9 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($local, $id)
+    {  
         $user = $this->repository->find($id);
-
         if (request()->wantsJson()) {
 
             return response()->json([
